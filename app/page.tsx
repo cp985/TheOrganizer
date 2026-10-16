@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { cn } from "@/lib/utils";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
             </code>{" "}
             file.
           </h1>
+          <h2 className={cn("max-w-xs text-3xl font-semibold leading-10 tracking-tight text-red-600 dark:text-zinc-50")}>Ciaooooooooooooooooo</h2>
           <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
             Looking for a starting point or more instructions? Head over to{" "}
             <a
