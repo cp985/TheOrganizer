@@ -35,7 +35,14 @@
     "actions": "Actions",
     "inStock": "In Stock",
     "lowStock": "Low Stock",
-    "outOfStock": "Out of Stock"
+    "outOfStock": "Out of Stock",
+    "backToWarehouse": "Back to warehouse",
+    "itemInfo": "Item Information",
+    "unitOfMeasure": "Unit of Measure",
+    "lastUpdated": "Last Updated",
+    "quickActions": "Quick Actions",
+    "technicalDescription": "Technical Description",
+    "quickActionsText": "Here we will add the button to record a warehouse movement (in/out sale) and the button to edit fields reserved for Administrators."
   }
 
 }

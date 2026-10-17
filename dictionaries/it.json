@@ -35,6 +35,13 @@
     "actions": "Azioni",
     "inStock": "Disponibile",
     "lowStock": "In Esaurimento",
-    "outOfStock": "Esaurito"
+    "outOfStock": "Esaurito",
+    "backToWarehouse": "Torna al magazzino",
+    "itemInfo": "Informazioni Articolo",
+    "unitOfMeasure": "Unità di Misura",
+    "lastUpdated": "Ultimo Aggiornamento",
+    "quickActions": "Azioni Rapide",
+    "technicalDescription": "Descrizione Tecnica",
+    "quickActionsText": "In questo spazio inseriremo il pulsante per registrare un movimento di magazzino (carico/scarico vendita) e il pulsante per la modifica dei campi riservato agli Amministratori."
   }
 }
