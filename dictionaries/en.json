@@ -1,0 +1,15 @@
+{
+  "common": {
+    "appName": "The Organizer",
+    "appTagline": "Enterprise Asset & Warehouse Management"
+  },
+  "login": {
+    "title": "Sign in to Warehouse",
+    "subtitle": "Enter your credentials to access The Organizer",
+    "usernameLabel": "Username",
+    "passwordLabel": "Password",
+    "submitButton": "Sign In",
+    "loading": "Signing in...",
+    "invalidCredentials": "Invalid credentials. Try with admin / admin"
+  }
+}

@@ -1,35 +1,42 @@
+// app/login/page.tsx
 'use client'
 
 import { useActionState } from 'react'
 import { handleLogin, FormState } from '@/actions/authActions'
 import { ThemeToggle } from '@/components/ThemeToggle'
+import { LanguageToggle } from '@/components/LanguageToggle'
+import { useLanguage } from '@/context/LanguageContext'
 import { Boxes, Lock, User, ArrowRight, Loader2 } from 'lucide-react'
 
 const initialState: FormState = {}
 
 export default function LoginPage() {
   const [state, formAction, isPending] = useActionState(handleLogin, initialState)
+  const { t } = useLanguage()
 
   return (
     <div className="relative min-h-screen flex flex-col justify-between bg-muted/40 font-sans">
-      {/* Header Minimalista con Theme Toggle */}
+      {/* Header Minimalista con Theme & Language Toggle */}
       <header className="flex justify-between items-center p-6 max-w-7xl w-full mx-auto">
         <div className="flex items-center gap-2.5 font-bold text-xl tracking-tight">
           <div className="p-2 bg-primary text-primary-foreground rounded-lg shadow-sm">
             <Boxes className="h-5 w-5" />
           </div>
-          <span>The Organizer</span>
+          <span>{t.common.appName}</span>
         </div>
-        <ThemeToggle />
+        <div className="flex items-center gap-2">
+          <LanguageToggle />
+          <ThemeToggle />
+        </div>
       </header>
 
       {/* Main Login Card - Stile Odoo / Enterprise */}
       <main className="flex-1 flex items-center justify-center p-4">
         <div className="w-full max-w-md bg-card border border-border rounded-xl shadow-lg p-8 space-y-6">
           <div className="space-y-1.5 text-center">
-            <h1 className="text-2xl font-bold tracking-tight">Accedi al Magazzino</h1>
+            <h1 className="text-2xl font-bold tracking-tight">{t.login.title}</h1>
             <p className="text-sm text-muted-foreground">
-              Inserisci le tue credenziali per accedere a The Organizer
+              {t.login.subtitle}
             </p>
           </div>
 
@@ -49,7 +56,7 @@ export default function LoginPage() {
             {/* Campo Username */}
             <div className="space-y-2">
               <label htmlFor="username" className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                Nome Utente
+                {t.login.usernameLabel}
               </label>
               <div className="relative">
                 <User className="absolute left-3 top-2.5 h-4 w-4 text-muted-foreground" />
@@ -69,11 +76,9 @@ export default function LoginPage() {
 
             {/* Campo Password */}
             <div className="space-y-2">
-              <div className="flex justify-between items-center">
-                <label htmlFor="password" className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                  Password
-                </label>
-              </div>
+              <label htmlFor="password" className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                {t.login.passwordLabel}
+              </label>
               <div className="relative">
                 <Lock className="absolute left-3 top-2.5 h-4 w-4 text-muted-foreground" />
                 <input
@@ -99,11 +104,11 @@ export default function LoginPage() {
               {isPending ? (
                 <>
                   <Loader2 className="h-4 w-4 animate-spin" />
-                  <span>Accesso in corso...</span>
+                  <span>{t.login.loading}</span>
                 </>
               ) : (
                 <>
-                  <span>Accedi</span>
+                  <span>{t.login.submitButton}</span>
                   <ArrowRight className="h-4 w-4" />
                 </>
               )}
@@ -114,7 +119,7 @@ export default function LoginPage() {
 
       {/* Footer Minimalista */}
       <footer className="py-4 text-center text-xs text-muted-foreground">
-        © 2026 The Organizer — Enterprise Asset & Warehouse Management
+        © 2026 {t.common.appName} — {t.common.appTagline}
       </footer>
     </div>
   )

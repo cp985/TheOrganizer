@@ -1,0 +1,15 @@
+{
+  "common": {
+    "appName": "The Organizer",
+    "appTagline": "Gestione Magazzino & Asset Enterprise"
+  },
+  "login": {
+    "title": "Accedi al Magazzino",
+    "subtitle": "Inserisci le tue credenziali per accedere a The Organizer",
+    "usernameLabel": "Nome Utente",
+    "passwordLabel": "Password",
+    "submitButton": "Accedi",
+    "loading": "Accesso in corso...",
+    "invalidCredentials": "Credenziali non valide. Prova con admin / admin"
+  }
+}
