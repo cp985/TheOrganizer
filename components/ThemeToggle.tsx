@@ -1,4 +1,3 @@
-// components/ThemeToggle.tsx
 'use client'
 
 import { useTheme } from 'next-themes'
@@ -15,7 +14,6 @@ function useIsClient() {
 }
 
 export function ThemeToggle() {
-  // Usiamo resolvedTheme invece di theme
   const { resolvedTheme, setTheme } = useTheme()
   const isClient = useIsClient()
 
@@ -23,7 +21,6 @@ export function ThemeToggle() {
     return <div className="w-9 h-9" />
   }
 
-  // Controlliamo l'effettivo tema renderizzato (dark o light)
   const isDark = resolvedTheme === 'dark'
 
   return (

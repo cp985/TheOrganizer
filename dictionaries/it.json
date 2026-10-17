@@ -11,5 +11,30 @@
     "submitButton": "Accedi",
     "loading": "Accesso in corso...",
     "invalidCredentials": "Credenziali non valide. Prova con admin / admin"
+  },
+  
+"warehouse": {
+    "title": "Magazzino & Inventario",
+    "subtitle": "Gestione articoli, giacenze e riassortimento",
+    "newProduct": "Nuovo Prodotto",
+    "searchPlaceholder": "Cerca per codice SKU o nome...",
+    "viewKanban": "Griglia",
+    "viewList": "Lista",
+    "allCategories": "Tutte le Categorie",
+    "categories": "Categorie",
+    "allStatuses": "Tutti gli Stati",
+    "sortByPrice": "Ordina per Prezzo",
+    "priceAsc": "Prezzo: dal più basso",
+    "priceDesc": "Prezzo: dal più alto",
+    "sku": "SKU",
+    "product": "Prodotto",
+    "category": "Categoria",
+    "stock": "Giacenza",
+    "price": "Prezzo Unitario",
+    "status": "Stato",
+    "actions": "Azioni",
+    "inStock": "Disponibile",
+    "lowStock": "In Esaurimento",
+    "outOfStock": "Esaurito"
   }
 }

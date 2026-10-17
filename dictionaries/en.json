@@ -11,5 +11,31 @@
     "submitButton": "Sign In",
     "loading": "Signing in...",
     "invalidCredentials": "Invalid credentials. Try with admin / admin"
+  },
+  
+"warehouse": {
+    "title": "Warehouse & Inventory",
+    "subtitle": "Product management, stock and replenishment",
+    "newProduct": "New Product",
+    "searchPlaceholder": "Search by SKU or name...",
+    "viewKanban": "Kanban",
+    "viewList": "List",
+    "allCategories": "All Categories",
+    "categories": "Categories",
+    "allStatuses": "All Statuses",
+    "sortByPrice": "Sort by Price",
+    "priceAsc": "Price: Low to High",
+    "priceDesc": "Price: High to Low",
+    "sku": "SKU",
+    "product": "Product",
+    "category": "Category",
+    "stock": "Stock",
+    "price": "Unit Price",
+    "status": "Status",
+    "actions": "Actions",
+    "inStock": "In Stock",
+    "lowStock": "Low Stock",
+    "outOfStock": "Out of Stock"
   }
+
 }

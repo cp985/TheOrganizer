@@ -1,6 +1,7 @@
 'use server'
 
 import { z } from 'zod'
+import { redirect } from 'next/navigation'
 
 const loginSchema = z.object({
   username: z.string().min(3, "Il nome utente deve contenere almeno 3 caratteri"),
@@ -35,10 +36,12 @@ export async function handleLogin(prevState: FormState, formData: FormData): Pro
 
   // TODO: Collegamento futuro a MongoDB per la verifica reale dell'utente
   if (username === 'admin' && password === 'admin') {
-    return {
-      success: true,
-      message: 'Autenticazione riuscita',
-    }
+   redirect('/theorganizer');
+    // return {
+    //   success: true,
+    //   message: 'Autenticazione riuscita',
+    // }
+    
   }
 
   return {
