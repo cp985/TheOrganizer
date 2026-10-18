@@ -29,6 +29,7 @@
     "sku": "SKU",
     "product": "Product",
     "category": "Category",
+    "articlesViewed": "Articles Viewed:",
     "stock": "Stock",
     "price": "Unit Price",
     "status": "Status",

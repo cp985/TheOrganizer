@@ -1,4 +1,3 @@
-// lib/mockData.ts
 
 export interface Product {
   _id: string
@@ -14,7 +13,7 @@ export interface Product {
   price: number
   status: 'in_stock' | 'low_stock' | 'out_of_stock'
   imageUrl?: string
-  lastUpdated: string
+  lastUpdated: Date
 }
 
 export const MOCK_PRODUCTS: Product[] = [
@@ -32,7 +31,7 @@ export const MOCK_PRODUCTS: Product[] = [
     price: 340.00,
     status: 'in_stock',
     imageUrl: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=300&q=80',
-    lastUpdated: '2026-10-15'
+    lastUpdated: new Date('2026-10-15')
   },
   {
     _id: 'prod_6701a02',
@@ -48,7 +47,7 @@ export const MOCK_PRODUCTS: Product[] = [
     price: 85.50,
     status: 'low_stock',
     imageUrl: 'https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?auto=format&fit=crop&w=300&q=80',
-    lastUpdated: '2026-10-16'
+    lastUpdated: new Date('2026-10-12')
   },
   {
     _id: 'prod_6701a03',
@@ -64,7 +63,7 @@ export const MOCK_PRODUCTS: Product[] = [
     price: 120.00,
     status: 'out_of_stock',
     imageUrl: 'https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=300&q=80',
-    lastUpdated: '2026-10-10'
+    lastUpdated: new Date('2026-10-10')
   },
   {
     _id: 'prod_6701a04',
@@ -80,7 +79,7 @@ export const MOCK_PRODUCTS: Product[] = [
     price: 18.20,
     status: 'in_stock',
     imageUrl: 'https://images.unsplash.com/photo-1581092162384-8987c1d64718?auto=format&fit=crop&w=300&q=80',
-    lastUpdated: '2026-10-14'
+    lastUpdated: new Date('2026-10-14')
   },
   {
     _id: 'prod_6701a05',
@@ -96,6 +95,6 @@ export const MOCK_PRODUCTS: Product[] = [
     price: 210.00,
     status: 'low_stock',
     imageUrl: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=300&q=80',
-    lastUpdated: '2026-10-16'
+    lastUpdated: new Date('2026-10-13')
   }
 ]
