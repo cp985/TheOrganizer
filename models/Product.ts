@@ -14,6 +14,7 @@ export interface Product {
   price: number
   status: 'in_stock' | 'low_stock' | 'out_of_stock'
   imageUrl?: string
+  reason?: string
   lastUpdated: string | Date
 }
 
@@ -30,6 +31,7 @@ interface ProductDocument extends Document {
   price: number
   status: 'in_stock' | 'low_stock' | 'out_of_stock'
   imageUrl?: string
+  reason?: string
   lastUpdated: Date
 }
 
@@ -47,6 +49,7 @@ const ProductSchema = new Schema<ProductDocument>(
     price: { type: Number, required: true, min: 0, default: 0 },
     status: { type: String, enum: ['in_stock', 'low_stock', 'out_of_stock'], default: 'in_stock' },
     imageUrl: { type: String, default: '' },
+    reason: { type: String, default: '', trim: true },
     lastUpdated: { type: Date, default: Date.now },
   },
   {

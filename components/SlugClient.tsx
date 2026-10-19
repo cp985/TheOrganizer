@@ -8,7 +8,7 @@ import { ThemeToggle } from '@/components/ThemeToggle'
 import { LanguageToggle } from '@/components/LanguageToggle'
 import { ArrowLeft, Package, CheckCircle2, AlertTriangle, XCircle, Tag, Calendar, Layers } from 'lucide-react'
 import { useParams } from 'next/navigation'
-
+import QuickAction from '@/components/QuickAction'
 interface PageProps {
    
 MOCK_PRODUCTS: Product[]
@@ -159,18 +159,13 @@ export default function ProductDetailPage( { MOCK_PRODUCTS}: PageProps ) {
                   <Calendar className="w-3 h-3" />
                   {t.warehouse.lastUpdated}
                 </span>
-                <span className="font-medium">{String(product.lastUpdated)}</span>
+                <span className="font-medium">{new Date(product.lastUpdated).toLocaleString(locale)}</span>
               </div>
             </div>
           </div>
 
           {/* Box Azioni (Prossimi Step) */}
-          <div className="border border-border bg-card rounded-xl p-6 shadow-sm space-y-4">
-            <h3 className="text-base font-semibold border-b border-border pb-2">{t.warehouse.quickActions}</h3>
-            <p className="text-xs text-muted-foreground leading-relaxed">
-              In questo spazio inseriremo il pulsante per registrare un movimento di magazzino (carico/scarico vendita) e il pulsante per la modifica dei campi riservato agli Amministratori.
-            </p>
-          </div>
+      <QuickAction productId={product._id} productUnit={product.unit} />
 
         </div>
       </main>

@@ -1,7 +1,7 @@
 import dotenv from 'dotenv'
 dotenv.config({ path: '.env.local' })
 import mongoose from 'mongoose'
-import { Product } from '../models/Product'
+import { Product, ProductModel } from '../models/Product'
 
 const MONGODB_URI = process.env.MONGODB_URI
 
@@ -24,6 +24,7 @@ const initialProducts = [
     price: 450.00,
     status: 'in_stock',
     imageUrl: '',
+    reason: '',
     lastUpdated: new Date()
   },
   {
@@ -38,7 +39,9 @@ const initialProducts = [
     description_en: 'Metal detection sensor with 4mm range and standard M12 connector.',
     price: 38.50,
     status: 'low_stock',
+
     imageUrl: '',
+    reason: '',
     lastUpdated: new Date()
   },
   {
@@ -54,6 +57,7 @@ const initialProducts = [
     price: 12.90,
     status: 'out_of_stock',
     imageUrl: '',
+    reason: '',
     lastUpdated: new Date()
   },
   {
@@ -69,6 +73,7 @@ const initialProducts = [
     price: 85.00,
     status: 'in_stock',
     imageUrl: '',
+    reason: '',
     lastUpdated: new Date()
   }
 ]
@@ -80,11 +85,11 @@ async function seed() {
     console.log('✅ Connesso con successo!')
 
     // Svuota la collezione per evitare duplicati SKU
-    await Product.deleteMany({})
+    await ProductModel.deleteMany({})
     console.log('🗑️ Vecchi prodotti rimossi.')
 
     // Inserisce i nuovi prodotti
-    const createdProducts = await Product.insertMany(initialProducts)
+    const createdProducts = await ProductModel.insertMany(initialProducts)
     console.log(`🚀 Inseriti con successo ${createdProducts.length} prodotti nel database!`)
 
     process.exit(0)
