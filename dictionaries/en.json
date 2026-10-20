@@ -17,6 +17,7 @@
     "title": "Warehouse & Inventory",
     "subtitle": "Product management, stock and replenishment",
     "newProduct": "New Product",
+    "movementsHistory":"Movements History",
     "searchPlaceholder": "Search by SKU or name...",
     "viewKanban": "Kanban",
     "viewList": "List",
@@ -44,6 +45,33 @@
     "quickActions": "Quick Actions",
     "technicalDescription": "Technical Description",
     "quickActionsText": "Here we will add the button to record a warehouse movement (in/out sale) and the button to edit fields reserved for Administrators."
-  }
-
+  },
+    "quickActions": {
+    "title": "Warehouse Movements",
+    "confirm": "Confirm Movement",
+    "quantity": "Quantity",
+    "descharge": "Discharge (-)",
+    "charge": "Charge (+)",
+    "motivation": "Motivation/Reason",
+    "customersRefound": "Customer Return",
+    "sale": "Sale Order",
+    "refound": "Damaged/Breakage",
+    "inventoryCorrection":"Inventory Correction",
+    "replenishment":"Supplier Replenishment",
+    "loading": "Registration in progress..."
+    
+  },
+"movementsHistory": {
+      "title": "Warehouse Movements History",
+      "subtitle": "Complete log of all stock increases and decreases.",
+      "countLabel": "recorded movements",
+      "empty": "No movements recorded yet.",
+      "typeIn": "Stock In",
+      "typeOut": "Stock Out",
+      "deleteTooltip": "Delete movement from history",
+      "deleteConfirm": "Are you sure you want to delete this movement from history?",
+      "deleteError": "Error while deleting movement.",
+      "skuLabel": "SKU",
+      "reasonLabel": "Reason"
+    }
 }

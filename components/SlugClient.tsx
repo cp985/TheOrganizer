@@ -53,27 +53,7 @@ export default function ProductDetailPage( { MOCK_PRODUCTS}: PageProps ) {
 
   return (
     <div className="min-h-screen bg-background text-foreground transition-colors duration-300 flex flex-col">
-      {/* Header Principale con Toggle Lingua e Tema */}
-      <header className="border-b border-border bg-card/50 backdrop-blur sticky top-0 z-10 px-6 py-4 flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <Link
-            href="/theorganizer"
-            className="p-2 bg-muted hover:bg-accent rounded-lg text-muted-foreground hover:text-foreground transition-colors"
-            title="Torna al magazzino"
-          >
-            <ArrowLeft className="w-5 h-5" />
-          </Link>
-          <div>
-            <h1 className="text-xl font-bold tracking-tight">{locale === 'en' ? product.name_en : product.name}</h1>
-            <p className="text-xs text-muted-foreground font-mono">{product.sku}</p>
-          </div>
-        </div>
 
-        <div className="flex items-center gap-2">
-          <LanguageToggle />
-          <ThemeToggle />
-        </div>
-      </header>
 
       {/* Contenuto Dettaglio Prodotto */}
       <main className="flex-1 max-w-5xl w-full mx-auto p-6 space-y-6">

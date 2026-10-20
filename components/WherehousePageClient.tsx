@@ -3,11 +3,9 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { useLanguage } from '@/context/LanguageContext'
-import { ThemeToggle } from '@/components/ThemeToggle'
-import { LanguageToggle } from '@/components/LanguageToggle'
 import {type  Product } from '@/models/Product'
 import { 
-  LayoutGrid, List, Plus, Search, Package, AlertTriangle, 
+  LayoutGrid, Clock, List, Plus, Search, Package, AlertTriangle, 
   CheckCircle2, XCircle, FolderTree, ChevronRight, Filter, ArrowUpDown 
 } from 'lucide-react'
 
@@ -76,23 +74,7 @@ export default function WarehousePage( { MOCK_PRODUCTS }: WhereHousePageProps ) 
 
   return (
     <div className="min-h-screen bg-background text-foreground transition-colors duration-300 flex flex-col">
-      {/* Header Principale con Toggle Lingua e Tema */}
-      <header className="border-b border-border bg-card/50 backdrop-blur sticky top-0 z-10 px-6 py-4 flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <div className="p-2 bg-primary/10 text-primary rounded-lg">
-            <Package className="w-6 h-6" />
-          </div>
-          <div>
-            <h1 className="text-xl font-bold tracking-tight">{t.warehouse.title}</h1>
-            <p className="text-xs text-muted-foreground">{t.warehouse.subtitle}</p>
-          </div>
-        </div>
-
-        <div className="flex items-center gap-2">
-          <LanguageToggle />
-          <ThemeToggle />
-        </div>
-      </header>
+  
 
       {/* Corpo Principale */}
       <div className="flex-1 max-w-7xl w-full mx-auto p-6 grid grid-cols-1 md:grid-cols-4 gap-6">
@@ -150,15 +132,30 @@ export default function WarehousePage( { MOCK_PRODUCTS }: WhereHousePageProps ) 
 
         {/* CONTENUTO PRINCIPALE */}
         <main className="md:col-span-3 space-y-6">
-          <div className="flex items-center justify-between mb-4">
+
+<div className="flex items-center justify-between mb-4">
   <span className="text-xs text-muted-foreground font-medium">
     {t.warehouse.articlesViewed} {filteredProducts.length} 
   </span>
-  <button className="flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground text-sm font-medium rounded-lg hover:opacity-90 transition-opacity shadow-sm">
-    <Plus className="w-4 h-4" />
-    <span>{t.warehouse.newProduct}</span>
-  </button>
+
+  <div className="flex items-center gap-3">
+    {/* Pulsante per andare alla pagina Storico Movimenti */}
+    <Link 
+      href="/admin/stockmovements"
+      className="flex items-center gap-2 px-4 py-2 bg-secondary text-secondary-foreground text-sm font-medium rounded-lg hover:bg-secondary/80 transition-colors shadow-sm border border-border"
+    >
+      <Clock className="w-4 h-4" />
+      <span>{t.warehouse.movementsHistory}</span>
+    </Link>
+
+    {/* Pulsante Nuovo Prodotto */}
+    <button className="flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground text-sm font-medium rounded-lg hover:opacity-90 transition-opacity shadow-sm">
+      <Plus className="w-4 h-4" />
+      <span>{t.warehouse.newProduct}</span>
+    </button>
+  </div>
 </div>
+
      {/* Action Bar Unificata e Compatta */}
 <div className="flex flex-wrap items-center gap-3 w-full bg-card border border-border rounded-xl p-3 shadow-sm">
   

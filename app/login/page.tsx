@@ -15,19 +15,6 @@ export default function LoginPage() {
 
   return (
     <div className="relative min-h-screen flex flex-col justify-between bg-muted/40 font-sans">
-      {/* Header Minimalista con Theme & Language Toggle */}
-      <header className="flex justify-between items-center p-6 max-w-7xl w-full mx-auto">
-        <div className="flex items-center gap-2.5 font-bold text-xl tracking-tight">
-          <div className="p-2 bg-primary text-primary-foreground rounded-lg shadow-sm">
-            <Boxes className="h-5 w-5" />
-          </div>
-          <span>{t.common.appName}</span>
-        </div>
-        <div className="flex items-center gap-2">
-          <LanguageToggle />
-          <ThemeToggle />
-        </div>
-      </header>
 
       {/* Main Login Card - Stile Odoo / Enterprise */}
       <main className="flex-1 flex items-center justify-center p-4">

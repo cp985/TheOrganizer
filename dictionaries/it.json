@@ -17,6 +17,7 @@
     "title": "Magazzino & Inventario",
     "subtitle": "Gestione articoli, giacenze e riassortimento",
     "newProduct": "Nuovo Prodotto",
+    "movementsHistory":"Storico Movimenti",
     "searchPlaceholder": "Cerca per codice SKU o nome...",
     "viewKanban": "Griglia",
     "viewList": "Lista",
@@ -44,5 +45,33 @@
     "quickActions": "Azioni Rapide",
     "technicalDescription": "Descrizione Tecnica",
     "quickActionsText": "In questo spazio inseriremo il pulsante per registrare un movimento di magazzino (carico/scarico vendita) e il pulsante per la modifica dei campi riservato agli Amministratori."
-  }
+  },
+  "quickActions": {
+    "title": "Movimenti di Magazzino",
+    "confirm": "Conferma Movimento",
+    "quantity": "Quantità",
+    "descharge": "Scarico (-)",
+    "charge": "Carico (+)",
+    "motivation": "Motivazione/Casuale",
+    "customersRefound": "Reso Cliente",
+    "sale": "Vendita Ordine",
+    "refound": "Danneggiato/rottura",
+    "inventoryCorrection":"Rettifica Inventario",
+    "replenishment":"Rifornimento Fornitore",
+    "loading": "Registrazione in corso..."
+  },
+"movementsHistory": {
+      "title": "Storico Movimenti Magazzino",
+      "subtitle": "Registro completo di tutti i carichi e scarichi effettuati.",
+      "countLabel": "movimenti registrati",
+      "empty": "Nessun movimento registrato finora.",
+      "typeIn": "Carico",
+      "typeOut": "Scarico",
+      "deleteTooltip": "Elimina movimento dallo storico",
+      "deleteConfirm": "Sei sicuro di voler eliminare questo movimento dallo storico?",
+      "deleteError": "Errore durante l'eliminazione del movimento.",
+      "skuLabel": "SKU",
+      "reasonLabel": "Causale"
+    }
+
 }

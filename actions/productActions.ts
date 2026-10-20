@@ -139,3 +139,16 @@ export async function updateStockAction(prevState: UpdateStockResult, formData: 
     return { success: false, message: 'Errore durante il salvataggio nel database' }
   }
 }
+
+
+export async function deleteMovementAction(movementId: string) {
+  try {
+    await connectDB()
+    await StockMovementModel.findByIdAndDelete(movementId)
+    revalidatePath('/theorganizer/admin/movements')
+    return { success: true, message: 'Movimento eliminato con successo' }
+  } catch (error) {
+    console.error(error)
+    return { success: false, message: 'Errore durante l eliminazione' }
+  }
+}
