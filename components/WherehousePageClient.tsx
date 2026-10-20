@@ -149,10 +149,10 @@ export default function WarehousePage( { MOCK_PRODUCTS }: WhereHousePageProps ) 
     </Link>
 
     {/* Pulsante Nuovo Prodotto */}
-    <button className="flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground text-sm font-medium rounded-lg hover:opacity-90 transition-opacity shadow-sm">
+    <Link href="/admin/newitem" className="flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground text-sm font-medium rounded-lg hover:opacity-90 transition-opacity shadow-sm">
       <Plus className="w-4 h-4" />
       <span>{t.warehouse.newProduct}</span>
-    </button>
+    </Link>
   </div>
 </div>
 

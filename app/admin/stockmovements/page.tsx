@@ -1,17 +1,17 @@
-import { connectDB } from '@/lib/db'
-import { StockMovementModel } from '@/models/StockMovement'
 import MovementsClient from '@/components/MovementsClient'
-
-
+import {getAllMovements} from '@/actions/productActions'
+import { StockMovement } from '@/models/StockMovement'
+import { connection } from 'next/server'
 
 export default async function AdminMovementsPage() {
-  await connectDB()
+  await connection()
+  
+  let movements: StockMovement[] = []
 
-  const movementsDocs = await StockMovementModel.find({})
-    .sort({ createdAt: -1 })
-    .lean()
+   
+  movements = await getAllMovements()
 
-  const movements = JSON.parse(JSON.stringify(movementsDocs))
+
 
   return <MovementsClient initialMovements={movements} />
 }

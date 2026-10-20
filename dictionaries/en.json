@@ -12,12 +12,12 @@
     "loading": "Signing in...",
     "invalidCredentials": "Invalid credentials. Try with admin / admin"
   },
-  
-"warehouse": {
+
+  "warehouse": {
     "title": "Warehouse & Inventory",
     "subtitle": "Product management, stock and replenishment",
     "newProduct": "New Product",
-    "movementsHistory":"Movements History",
+    "movementsHistory": "Movements History",
     "searchPlaceholder": "Search by SKU or name...",
     "viewKanban": "Kanban",
     "viewList": "List",
@@ -46,7 +46,7 @@
     "technicalDescription": "Technical Description",
     "quickActionsText": "Here we will add the button to record a warehouse movement (in/out sale) and the button to edit fields reserved for Administrators."
   },
-    "quickActions": {
+  "quickActions": {
     "title": "Warehouse Movements",
     "confirm": "Confirm Movement",
     "quantity": "Quantity",
@@ -56,22 +56,57 @@
     "customersRefound": "Customer Return",
     "sale": "Sale Order",
     "refound": "Damaged/Breakage",
-    "inventoryCorrection":"Inventory Correction",
-    "replenishment":"Supplier Replenishment",
+    "inventoryCorrection": "Inventory Correction",
+    "replenishment": "Supplier Replenishment",
     "loading": "Registration in progress..."
-    
   },
-"movementsHistory": {
-      "title": "Warehouse Movements History",
-      "subtitle": "Complete log of all stock increases and decreases.",
-      "countLabel": "recorded movements",
-      "empty": "No movements recorded yet.",
-      "typeIn": "Stock In",
-      "typeOut": "Stock Out",
-      "deleteTooltip": "Delete movement from history",
-      "deleteConfirm": "Are you sure you want to delete this movement from history?",
-      "deleteError": "Error while deleting movement.",
-      "skuLabel": "SKU",
-      "reasonLabel": "Reason"
-    }
+  "movementsHistory": {
+    "title": "Warehouse Movements History",
+    "subtitle": "Complete log of all stock increases and decreases.",
+    "countLabel": "recorded movements",
+    "empty": "No movements recorded yet.",
+    "typeIn": "Stock In",
+    "typeOut": "Stock Out",
+    "deleteTooltip": "Delete movement from history",
+    "deleteConfirm": "Are you sure you want to delete this movement from history?",
+    "deleteError": "Error while deleting movement.",
+    "skuLabel": "SKU",
+    "reasonLabel": "Reason",
+    "confirmDeleteTitle": "Confirm Deletion",
+    "delete": "Delete",
+    "cancel": "Cancel",
+    "searchPlaceholder": "Search by name or SKU...",
+    "filterAll": "All",
+    "filterIn": "Stock In",
+    "filterOut": "Stock Out",
+    "noResults": "No movements match the selected filters."
+  },
+  "updateCreate": {
+    "createTitle": "Create Product",
+    "updateTitle": "Update Product",
+    "backToStock": "Back to Inventory",
+    "tabIt": "Italian 🇮🇹",
+    "tabEn": "English 🇬🇧",
+    "skuLabel": "SKU / Product Code *",
+    "skuPlaceholder": "e.g. PROD-001",
+    "categoryLabelIt": "Category (Italian) *",
+    "categoryLabelEn": "Category (English)",
+    "categoryPlaceholderIt": "e.g. Elettronica",
+    "categoryPlaceholderEn": "e.g. Electronics",
+    "nameLabelIt": "Product Name (Italian) *",
+    "nameLabelEn": "Product Name (English)",
+    "namePlaceholderIt": "e.g. Cavo USB-C",
+    "namePlaceholderEn": "e.g. USB-C Cable",
+    "stockLabel": "Stock / Quantity *",
+    "priceLabel": "Price (€) *",
+    "unitLabel": "Unit of Measure *",
+    "unitPlaceholder": "e.g. pcs, kg, m",
+    "descLabelIt": "Description (Italian)",
+    "descLabelEn": "Description (English)",
+    "descPlaceholderIt": "Describe product features in Italian...",
+    "descPlaceholderEn": "Describe product features...",
+    "cancel": "Cancel",
+    "saving": "Saving...",
+    "saveError": "Error while saving"
+  }
 }

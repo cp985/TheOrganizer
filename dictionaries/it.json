@@ -12,12 +12,12 @@
     "loading": "Accesso in corso...",
     "invalidCredentials": "Credenziali non valide. Prova con admin / admin"
   },
-  
-"warehouse": {
+
+  "warehouse": {
     "title": "Magazzino & Inventario",
     "subtitle": "Gestione articoli, giacenze e riassortimento",
     "newProduct": "Nuovo Prodotto",
-    "movementsHistory":"Storico Movimenti",
+    "movementsHistory": "Storico Movimenti",
     "searchPlaceholder": "Cerca per codice SKU o nome...",
     "viewKanban": "Griglia",
     "viewList": "Lista",
@@ -56,22 +56,57 @@
     "customersRefound": "Reso Cliente",
     "sale": "Vendita Ordine",
     "refound": "Danneggiato/rottura",
-    "inventoryCorrection":"Rettifica Inventario",
-    "replenishment":"Rifornimento Fornitore",
+    "inventoryCorrection": "Rettifica Inventario",
+    "replenishment": "Rifornimento Fornitore",
     "loading": "Registrazione in corso..."
   },
-"movementsHistory": {
-      "title": "Storico Movimenti Magazzino",
-      "subtitle": "Registro completo di tutti i carichi e scarichi effettuati.",
-      "countLabel": "movimenti registrati",
-      "empty": "Nessun movimento registrato finora.",
-      "typeIn": "Carico",
-      "typeOut": "Scarico",
-      "deleteTooltip": "Elimina movimento dallo storico",
-      "deleteConfirm": "Sei sicuro di voler eliminare questo movimento dallo storico?",
-      "deleteError": "Errore durante l'eliminazione del movimento.",
-      "skuLabel": "SKU",
-      "reasonLabel": "Causale"
-    }
-
+  "movementsHistory": {
+    "title": "Storico Movimenti Magazzino",
+    "subtitle": "Registro completo di tutti i carichi e scarichi effettuati.",
+    "countLabel": "movimenti registrati",
+    "empty": "Nessun movimento registrato finora.",
+    "typeIn": "Carico",
+    "typeOut": "Scarico",
+    "deleteTooltip": "Elimina movimento dallo storico",
+    "deleteConfirm": "Sei sicuro di voler eliminare questo movimento dallo storico?",
+    "deleteError": "Errore durante l'eliminazione del movimento.",
+    "skuLabel": "SKU",
+    "reasonLabel": "Causale",
+    "confirmDeleteTitle": "Conferma Eliminazione",
+    "delete": "Elimina",
+    "cancel": "Annulla",
+    "searchPlaceholder": "Cerca per nome o SKU...",
+    "filterAll": "Tutti",
+    "filterIn": "Carichi",
+    "filterOut": "Scarichi",
+    "noResults": "Nessun movimento corrisponde ai filtri selezionati."
+  },
+  "updateCreate": {
+    "createTitle": "Crea Prodotto",
+    "updateTitle": "Aggiorna Prodotto",
+    "backToStock": "Torna al Magazzino",
+    "tabIt": "Italiano 🇮🇹",
+    "tabEn": "English 🇬🇧",
+    "skuLabel": "SKU / Codice Prodotto *",
+    "skuPlaceholder": "es. PROD-001",
+    "categoryLabelIt": "Categoria (Italiano) *",
+    "categoryLabelEn": "Categoria (English)",
+    "categoryPlaceholderIt": "es. Elettronica",
+    "categoryPlaceholderEn": "e.g. Electronics",
+    "nameLabelIt": "Nome Prodotto (Italiano) *",
+    "nameLabelEn": "Nome Prodotto (English)",
+    "namePlaceholderIt": "es. Cavo USB-C",
+    "namePlaceholderEn": "e.g. USB-C Cable",
+    "stockLabel": "Giacenza / Stock *",
+    "priceLabel": "Prezzo (€) *",
+    "unitLabel": "Unità di Misura *",
+    "unitPlaceholder": "es. pz, kg, mt",
+    "descLabelIt": "Descrizione (Italiano)",
+    "descLabelEn": "Descrizione (English)",
+    "descPlaceholderIt": "Descrivi le caratteristiche del prodotto...",
+    "descPlaceholderEn": "Describe product features...",
+    "cancel": "Annulla",
+    "saving": "Salvataggio...",
+    "saveError": "Errore durante il salvataggio"
+  }
 }

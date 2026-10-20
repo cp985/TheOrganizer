@@ -14,7 +14,7 @@ export default function Navbar() {
   return (
     <header className="border-b border-border bg-card/50 backdrop-blur sticky top-0 z-10 px-6 py-4 flex items-center justify-between">
       <div className="flex items-center gap-3">
-       { pathname !== '/theorganizer' ? (<div className="p-2 bg-primary/10 text-primary rounded-lg hover:bg-primary/20">
+       { pathname !== '/theorganizer' && pathname !== '/login' ? (<div className="p-2 bg-primary/10 text-primary rounded-lg hover:bg-primary/20">
          <Link href="/theorganizer">
          <ArrowLeft className="w-6 h-6" />
          </Link> 

@@ -1,19 +1,21 @@
 import mongoose, { Schema, Document, Model } from 'mongoose'
 
 export interface StockMovement {
-  _id?: string
+  _id: string
   productId: mongoose.Types.ObjectId | string
   productName: string
+  productName_en: string
   productSku: string
   type: 'in' | 'out'
   quantity: number
   reason: string
-  createdAt?: Date
+  createdAt: Date
 }
 
 interface StockMovementDocument extends Document {
   productId: mongoose.Types.ObjectId
   productName: string
+  productName_en: string
   productSku: string
   type: 'in' | 'out'
   quantity: number
@@ -25,6 +27,7 @@ const StockMovementSchema = new Schema<StockMovementDocument>(
   {
     productId: { type: Schema.Types.ObjectId, ref: 'Product', required: true },
     productName: { type: String, required: true },
+    productName_en: { type: String, required: true },
     productSku: { type: String, required: true },
     type: { type: String, enum: ['in', 'out'], required: true },
     quantity: { type: Number, required: true, min: 1 },
