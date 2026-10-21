@@ -37,7 +37,6 @@ export default function MovementsClient({ initialMovements }: MovementsClientPro
     router.refresh();
   }, [router]);
 
-  // Esegue la cancellazione effettiva dopo la conferma nel Modal
   const confirmDelete = () => {
     if (!movementToDelete) return;
 

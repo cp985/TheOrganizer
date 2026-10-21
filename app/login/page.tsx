@@ -1,28 +1,41 @@
 'use client'
 
-import { useActionState } from 'react'
-import { handleLogin, FormState } from '@/actions/authActions'
-import { ThemeToggle } from '@/components/ThemeToggle'
-import { LanguageToggle } from '@/components/LanguageToggle'
+import { useState, useActionState } from 'react'
+import { handleLogin } from '@/actions/authActions'
+import { handleRegister } from '@/actions/authActions' 
+import { FormState } from '@/actions/authActions'
 import { useLanguage } from '@/context/LanguageContext'
-import { Boxes, Lock, User, ArrowRight, Loader2 } from 'lucide-react'
+import { Lock, User, ArrowRight, Loader2 } from 'lucide-react'
 
 const initialState: FormState = {}
 
 export default function LoginPage() {
-  const [state, formAction, isPending] = useActionState(handleLogin, initialState)
+  const [isRegisterMode, setIsRegisterMode] = useState(false)
   const { t } = useLanguage()
+
+  // Gestiamo separatamente i due stati delle azioni per evitare conflitti
+  const [loginState, loginAction, isLoginPending] = useActionState(handleLogin, initialState)
+  const [registerState, registerAction, isRegisterPending] = useActionState(handleRegister, initialState)
+
+  // Selezioniamo quale azione e quale stato usare in base alla modalità scelta dall'utente
+  const state = isRegisterMode ? registerState : loginState
+  const formAction = isRegisterMode ? registerAction : loginAction
+  const isPending = isRegisterMode ? isRegisterPending : isLoginPending
 
   return (
     <div className="relative min-h-screen flex flex-col justify-between bg-muted/40 font-sans">
 
-      {/* Main Login Card - Stile Odoo / Enterprise */}
+      {/* Main Login/Register Card - Stile Odoo / Enterprise */}
       <main className="flex-1 flex items-center justify-center p-4">
         <div className="w-full max-w-md bg-card border border-border rounded-xl shadow-lg p-8 space-y-6">
           <div className="space-y-1.5 text-center">
-            <h1 className="text-2xl font-bold tracking-tight">{t.login.title}</h1>
+            <h1 className="text-2xl font-bold tracking-tight">
+              {isRegisterMode ? "Crea Account" : t.login.title}
+            </h1>
             <p className="text-sm text-muted-foreground">
-              {t.login.subtitle}
+              {isRegisterMode 
+                ? "Registrati per accedere a The Organizer" 
+                : t.login.subtitle}
             </p>
           </div>
 
@@ -56,7 +69,7 @@ export default function LoginPage() {
                 />
               </div>
               {state.errors?.username && (
-                <p className="text-xs text-destructive">{state.errors.username[0]}</p>
+                <p className="text-xs text-destructive">{t.login.errorUser}</p>
               )}
             </div>
 
@@ -77,7 +90,7 @@ export default function LoginPage() {
                 />
               </div>
               {state.errors?.password && (
-                <p className="text-xs text-destructive">{state.errors.password[0]}</p>
+                <p className="text-xs text-destructive">{t.login.errorPassword}</p>
               )}
             </div>
 
@@ -94,12 +107,25 @@ export default function LoginPage() {
                 </>
               ) : (
                 <>
-                  <span>{t.login.submitButton}</span>
+                  <span>{isRegisterMode ? "Registrati" : t.login.submitButton}</span>
                   <ArrowRight className="h-4 w-4" />
                 </>
               )}
             </button>
           </form>
+
+          {/* Toggle per switchare tra Login e Registrazione */}
+          <div className="text-center pt-2 border-t border-border">
+            <button
+              type="button"
+              onClick={() => setIsRegisterMode(!isRegisterMode)}
+              className="text-xs text-muted-foreground hover:text-primary transition-colors underline underline-offset-4"
+            >
+              {isRegisterMode 
+                ? "Hai già un account? Accedi" 
+                : "Non hai un account? Registrati"}
+            </button>
+          </div>
         </div>
       </main>
 

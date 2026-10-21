@@ -1,12 +1,22 @@
-import { Package , ArrowLeft} from "lucide-react";
+"use client"
+
+import { Package , ArrowLeft, LogOut} from "lucide-react";
 import { LanguageToggle } from "./LanguageToggle";
 import { ThemeToggle } from "./ThemeToggle";
 import { useLanguage } from '@/context/LanguageContext'
 import {usePathname} from "next/navigation";
 import Link from "next/link";
+import {signOut} from "next-auth/react"
+
+interface Props {
+  session: any
+}
+
+export  default   function NavbarClient( { session }: Props) {
 
 
-export default function Navbar() {
+
+
     const pathname = usePathname()
 
       const { t, locale } = useLanguage()
@@ -34,6 +44,15 @@ export default function Navbar() {
       </div>
 
       <div className="flex items-center gap-2">
+       
+       {session && (        <button
+  onClick={() => signOut({ callbackUrl: '/login' } )}
+  className="flex items-center gap-2 px-3 py-1.5 text-sm font-medium text-destructive bg-destructive/10 hover:bg-destructive/20 rounded-md transition-colors"
+>
+  <LogOut className="w-4 h-4" />
+  <span>Logout</span>
+</button>) }
+
         <LanguageToggle />
         <ThemeToggle />
       </div>

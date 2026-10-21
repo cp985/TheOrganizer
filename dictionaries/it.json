@@ -10,9 +10,10 @@
     "passwordLabel": "Password",
     "submitButton": "Accedi",
     "loading": "Accesso in corso...",
-    "invalidCredentials": "Credenziali non valide. Prova con admin / admin"
+    "invalidCredentials": "Credenziali non valide. Prova con admin / admin",
+    "errorUser": "Nome utente non valido. Deve contenere almeno 3 caratteri.",
+    "errorPassword": "Password non valida. Deve contenere almeno 4 caratteri."
   },
-
   "warehouse": {
     "title": "Magazzino & Inventario",
     "subtitle": "Gestione articoli, giacenze e riassortimento",

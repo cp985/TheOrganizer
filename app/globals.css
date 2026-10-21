@@ -135,3 +135,12 @@
     @apply font-sans;
   }
 }
+
+@keyframes progressFill {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
+.animate-progress {
+  animation: progressFill 6s linear forwards;
+}

@@ -10,7 +10,9 @@
     "passwordLabel": "Password",
     "submitButton": "Sign In",
     "loading": "Signing in...",
-    "invalidCredentials": "Invalid credentials. Try with admin / admin"
+    "invalidCredentials": "Invalid credentials. Try with admin / admin",
+    "errorUser": "Invalid username. Must contain at least 3 characters.",
+    "errorPassword": "Invalid password. Must contain at least 4 characters."
   },
 
   "warehouse": {

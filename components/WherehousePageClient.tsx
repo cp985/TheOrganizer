@@ -9,14 +9,15 @@ import {
   CheckCircle2, XCircle, FolderTree, ChevronRight, Filter, ArrowUpDown 
 } from 'lucide-react'
 
-
 interface WhereHousePageProps {
-  MOCK_PRODUCTS: Product[]
+  MOCK_PRODUCTS: Product[],
+
+  isAdmin: boolean
 }
 
 
 
-export default function WarehousePage( { MOCK_PRODUCTS }: WhereHousePageProps ) {
+export default function WarehousePage( { MOCK_PRODUCTS,isAdmin }: WhereHousePageProps ) {
   const { t, locale } = useLanguage()
   const [viewMode, setViewMode] = useState<'kanban' | 'list'>('kanban')
   const [searchQuery, setSearchQuery] = useState('')
@@ -26,6 +27,7 @@ export default function WarehousePage( { MOCK_PRODUCTS }: WhereHousePageProps ) 
   const categories = Array.from(
     new Set(MOCK_PRODUCTS.map((p) => (locale === 'en' ? p.category_en : p.category)))
   )
+
 
   const filteredProducts = MOCK_PRODUCTS.filter((product) => {
     const currentName = locale === 'en' ? product.name_en || product.name : product.name
@@ -137,23 +139,30 @@ export default function WarehousePage( { MOCK_PRODUCTS }: WhereHousePageProps ) 
   <span className="text-xs text-muted-foreground font-medium">
     {t.warehouse.articlesViewed} {filteredProducts.length} 
   </span>
+{
+ isAdmin && (
+    <div className="flex items-center gap-3">
+      {/* Pulsante per andare alla pagina Storico Movimenti */}
+      <Link 
+        href="/admin/stockmovements"
+        className="flex items-center gap-2 px-4 py-2 bg-secondary text-secondary-foreground text-sm font-medium rounded-lg hover:bg-secondary/80 transition-colors shadow-sm border border-border"
+      >
+        <Clock className="w-4 h-4" />
+        <span>{t.warehouse.movementsHistory}</span>
+      </Link>
 
-  <div className="flex items-center gap-3">
-    {/* Pulsante per andare alla pagina Storico Movimenti */}
-    <Link 
-      href="/admin/stockmovements"
-      className="flex items-center gap-2 px-4 py-2 bg-secondary text-secondary-foreground text-sm font-medium rounded-lg hover:bg-secondary/80 transition-colors shadow-sm border border-border"
-    >
-      <Clock className="w-4 h-4" />
-      <span>{t.warehouse.movementsHistory}</span>
-    </Link>
+      {/* Pulsante Nuovo Prodotto */}
+      <Link 
+        href="/admin/newitem" 
+        className="flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground text-sm font-medium rounded-lg hover:opacity-90 transition-opacity shadow-sm"
+      >
+        <Plus className="w-4 h-4" />
+        <span>{t.warehouse.newProduct}</span>
+      </Link>
+    </div>
+  
+)}
 
-    {/* Pulsante Nuovo Prodotto */}
-    <Link href="/admin/newitem" className="flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground text-sm font-medium rounded-lg hover:opacity-90 transition-opacity shadow-sm">
-      <Plus className="w-4 h-4" />
-      <span>{t.warehouse.newProduct}</span>
-    </Link>
-  </div>
 </div>
 
      {/* Action Bar Unificata e Compatta */}
