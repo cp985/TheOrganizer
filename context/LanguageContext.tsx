@@ -1,4 +1,3 @@
-// context/LanguageContext.tsx
 'use client'
 
 import React, { createContext, useContext, useSyncExternalStore } from 'react'
@@ -37,14 +36,17 @@ function getServerSnapshot(): Locale {
   return 'it'
 }
 
+const emptySubscribe = () => () => {}
+function useIsClient() {
+  return useSyncExternalStore(emptySubscribe, () => true, () => false)
+}
+
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  // Sincronizza direttamente il valore di localStorage con React
   const locale = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot)
 
   const setLocale = (newLocale: Locale) => {
     if (typeof window !== 'undefined') {
       localStorage.setItem('app-locale', newLocale)
-      // Notifica React del cambiamento immediato
       window.dispatchEvent(new Event('locale-change'))
     }
   }
@@ -58,8 +60,17 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 
 export function useLanguage() {
   const context = useContext(LanguageContext)
+  const isClient = useIsClient()
+
   if (!context) {
     throw new Error('useLanguage deve essere usato all\'interno di LanguageProvider')
   }
-  return context
+
+  const locale: Locale = isClient ? context.locale : 'it'
+
+  return {
+    ...context,
+    locale,
+    t: dictionaries[locale],
+  }
 }

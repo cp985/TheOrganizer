@@ -2,9 +2,6 @@ import type { Metadata } from "next";
 import { Providers } from "./providers";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import NavbarServer from "@/components/NavbarServer";
-import { Suspense } from "react";
-import Loading from "@/components/Loading";
 
 
 const geistSans = Geist({
@@ -32,9 +29,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-full flex flex-col">
         <Providers>
-       <Suspense fallback={<Loading />}>
-          <NavbarServer />
-        </Suspense>
+  
           {children}
         </Providers>
       </body>
