@@ -7,6 +7,7 @@ export const productSchema = z.object({
   name_en: z.string().min(1, { message: 'nome en non valido / invalid english name' }),
   category: z.string().min(1, { message: 'categoria non valida / invalid category' }),
   category_en: z.string().min(1, { message: 'categoria en non valida / invalid english category' }),
+  imageUrl: z.string().min(1,{message:'Url immagine non valido / Invalid URL'}),
   stock: z.coerce.number().min(0, { message: 'stock non valido / invalid stock' }),
   price: z.coerce.number().min(0, { message: 'prezzo non valido / invalid price' }),
   unit: z.string().min(1, { message: 'unità non valida / invalid unit' }),

@@ -108,6 +108,15 @@
     "descPlaceholderEn": "Describe product features...",
     "cancel": "Annulla",
     "saving": "Salvataggio...",
-    "saveError": "Errore durante il salvataggio"
+    "saveError": "Errore durante il salvataggio",
+    "imageUrlPlaceholder":"es. http://www.imaage.com",
+    "imageUrl":"URL immagine prodotto",
+    "deleteButton": "Elimina Prodotto",
+    "deleteConfirmTitle": "Sei assolutamente sicuro?",
+    "deleteConfirmText1": "Questa azione è irreversibile. Digita la parola",
+    "deleteConfirmText2": "qui sotto per abilitare il pulsante di eliminazione.",
+    "deletePlaceholder": "Scrivi",
+    "deleteConfirmAction": "Conferma ed Elimina",
+    "deleteKeyword": "cancella"
   }
 }

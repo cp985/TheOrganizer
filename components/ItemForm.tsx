@@ -34,7 +34,14 @@ export default function ProductForm({ initialData }: ProductFormProps) {
   }
 
   return (
+    <>
+    {initialData ? (<h1 className="text-2xl font-bold tracking-tight">{t.updateCreate.updateTitle}</h1>
+) :(<h1 className="text-2xl font-bold tracking-tight">{t.updateCreate.createTitle}</h1>
+)}
+
     <form action={formAction} className="space-y-6 bg-card p-6 rounded-xl border border-border shadow-sm">
+     
+      
       {state?.message && (
         <div className="p-3 text-sm bg-rose-500/10 border border-rose-500/20 text-rose-600 rounded-lg">
           {state.message}
@@ -111,7 +118,7 @@ export default function ProductForm({ initialData }: ProductFormProps) {
           )}
         </div>
 
-        <div className="space-y-1.5">
+               <div className="space-y-1.5">
           <label className="text-sm font-medium text-foreground">{t.updateCreate.categoryLabelEn}</label>
           <input
             type="text"
@@ -127,6 +134,22 @@ export default function ProductForm({ initialData }: ProductFormProps) {
           )}
         </div>
       </div>
+ <div className="space-y-1.5">
+          <label className="text-sm font-medium text-foreground">{t.updateCreate.imageUrl}</label>
+          <input
+            type="text"
+            name="imageUrl"
+            defaultValue={getValue('imageUrl')}
+            placeholder={t.updateCreate.imageUrlPlaceholder}
+            className={`w-full px-3 py-2 bg-background border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 ${
+              state?.errors?.imageUrl ? 'border-rose-500' : 'border-border'
+            }`}
+          />
+          {state?.errors?.imageUrl && (
+            <p className="text-xs text-rose-500 font-medium">{state.errors.imageUrl[0]}</p>
+          )}
+        </div>
+
 
       {/* Stock, Prezzo e Unità */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -242,5 +265,6 @@ export default function ProductForm({ initialData }: ProductFormProps) {
         </button>
       </div>
     </form>
+    </>
   )
 }

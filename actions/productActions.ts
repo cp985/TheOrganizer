@@ -134,6 +134,7 @@ export async function saveProductAction(
     name_en: formData.get('name_en'),
     category: formData.get('category'),
     category_en: formData.get('category_en'),
+    imageUrl: formData.get('imageUrl'),
     stock: formData.get('stock'),
     price: formData.get('price'),
     unit: formData.get('unit'),
@@ -189,4 +190,18 @@ export async function saveProductAction(
   }
 
   redirect('/theorganizer')
+}
+
+export async function deleteProduct(_id: string) {
+  try {
+    await connectDB()
+    await ProductModel.findByIdAndDelete(_id)
+    revalidatePath('/admin/theorganizer')
+    return { success: true, message: 'Prodotto cancellato con successo! / Item deleted successfully' }
+  
+  } catch (error) {
+    console.error(error)
+    return { success: false, message: 'Errore durante la cancellazione del prodotto / Error deleting product' }
+  }
+   
 }

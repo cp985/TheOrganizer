@@ -2,18 +2,20 @@ import { connectDB } from '@/lib/db'
 import { ProductModel } from '@/models/Product'
 import ProductForm from '@/components/ItemForm' 
 import { notFound } from 'next/navigation'
+import DeleteProductButton from '@/components/DeleteProductButton'
 
 
 
 interface EditPageProps {
-  params: Promise<{ id: string }>
+  params: Promise<{ _id: string }>
 }
 
 export default async function UpdateItemPage({ params }: EditPageProps) {
-  const { id } = await params
+  const { _id } = await params
+
 
   await connectDB()
-  const productDoc = await ProductModel.findById(id).lean()
+  const productDoc = await ProductModel.findById(_id).lean()
 
   if (!productDoc) {
     notFound()
@@ -23,9 +25,9 @@ export default async function UpdateItemPage({ params }: EditPageProps) {
 
   return (
     <div className="p-4 md:p-6 max-w-3xl mx-auto space-y-6">
-      <h1 className="text-2xl font-bold tracking-tight">Modifica Prodotto</h1>
       {/* Passando initialData, il form si pre-compila e sa che deve aggiornare */}
       <ProductForm initialData={product} />
+<DeleteProductButton productId={product._id} />
     </div>
   )
 }

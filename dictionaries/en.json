@@ -109,6 +109,15 @@
     "descPlaceholderEn": "Describe product features...",
     "cancel": "Cancel",
     "saving": "Saving...",
-    "saveError": "Error while saving"
+    "saveError": "Error while saving",
+    "imageUrlPlaceholder":"e.g http://wwww.immage.com",
+    "imageUrl":"URL product image",
+    "deleteButton": "Delete Product",
+    "deleteConfirmTitle": "Are you absolutely sure?",
+    "deleteConfirmText1": "This action is irreversible. Type the word",
+    "deleteConfirmText2": "below to enable the delete button.",
+    "deletePlaceholder": "Type",
+    "deleteConfirmAction": "Confirm and Delete",
+    "deleteKeyword": "delete"
   }
 }

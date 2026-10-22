@@ -4,18 +4,17 @@ import {type  Product } from '@/models/Product'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { useLanguage } from '@/context/LanguageContext'
-import { ThemeToggle } from '@/components/ThemeToggle'
-import { LanguageToggle } from '@/components/LanguageToggle'
-import { ArrowLeft, Package, CheckCircle2, AlertTriangle, XCircle, Tag, Calendar, Layers } from 'lucide-react'
+import {PencilIcon ,Package, CheckCircle2, AlertTriangle, XCircle, Tag, Calendar, Layers } from 'lucide-react'
 import { useParams } from 'next/navigation'
 import QuickAction from '@/components/QuickAction'
 interface PageProps {
    
-MOCK_PRODUCTS: Product[]
+MOCK_PRODUCTS: Product[],
+isAdmin:boolean
 }
 
 
-export default function ProductDetailPage( { MOCK_PRODUCTS}: PageProps ) {
+export default function ProductDetailPage( { MOCK_PRODUCTS, isAdmin}: PageProps ) {
   
    const { _id } = useParams<{ _id: string }>()
   const { t,locale } = useLanguage()
@@ -51,6 +50,20 @@ export default function ProductDetailPage( { MOCK_PRODUCTS}: PageProps ) {
     }
   }
 
+  const formatDate = (dateStr: string, locale: string) => {
+  if (!dateStr) return "";
+  const [datePart, timePart] = dateStr.split("T");
+  const [year, month, day] = datePart.split("-");
+  const time = timePart ? timePart.slice(0, 5) : "";
+
+  // Formato inglese (MM/DD/YYYY) o italiano (DD/MM/YYYY)
+  if (locale === "en") {
+    return `${month}/${day}/${year} ${time}`;
+  }
+  
+  return `${day}/${month}/${year} ${time}`;
+}
+
   return (
     <div className="min-h-screen bg-background text-foreground transition-colors duration-300 flex flex-col">
 
@@ -82,7 +95,22 @@ export default function ProductDetailPage( { MOCK_PRODUCTS}: PageProps ) {
                 {getStatusBadge(product.status)}
                 <span className="text-xs text-muted-foreground font-mono">ID: {product._id}</span>
               </div>
-              <h2 className="text-2xl font-bold tracking-tight">{ locale === 'en' ? product.name_en : product.name}</h2>
+
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+  <h2 className="text-2xl font-bold tracking-tight">
+    {locale === 'en' ? product.name_en : product.name}
+  </h2>
+
+  {/* Pulsante Modifica (Visibile solo agli Admin) */}
+
+    <Link 
+      href={`/theorganizer/${product._id}/updateitem`}
+      className="inline-flex items-center gap-1.5 bg-primary text-primary-foreground px-3 py-1.5 rounded-lg text-xs font-semibold hover:opacity-90 shadow-sm w-fit transition-opacity"
+    >
+      <PencilIcon/> <span className={'text-[1rem]'}>{t.updateCreate.updateTitle}</span>
+    </Link>
+  
+</div>
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Layers className="w-4 h-4 text-primary" />
                 <span>{ locale === 'en' ? product.category_en : product.category}</span>
@@ -136,10 +164,10 @@ export default function ProductDetailPage( { MOCK_PRODUCTS}: PageProps ) {
               </div>
               <div className="p-3 rounded-lg bg-muted/40 border border-border/50">
                 <span className="text-muted-foreground block text-xs flex items-center gap-1">
-                  <Calendar className="w-3 h-3" />
+                  <Calendar className="w-3 h-3"/>
                   {t.warehouse.lastUpdated}
                 </span>
-                <span className="font-medium">{new Date(product.lastUpdated).toLocaleString(locale)}</span>
+                <span className=" font-medium">{formatDate(String(product.lastUpdated), locale)}</span>
               </div>
             </div>
           </div>
