@@ -10,11 +10,11 @@ import QuickAction from '@/components/QuickAction'
 interface PageProps {
    
 MOCK_PRODUCTS: Product[],
-isAdmin:boolean
+
 }
 
 
-export default function ProductDetailPage( { MOCK_PRODUCTS, isAdmin}: PageProps ) {
+export default function ProductDetailPage( { MOCK_PRODUCTS}: PageProps ) {
   
    const { _id } = useParams<{ _id: string }>()
   const { t,locale } = useLanguage()

@@ -19,7 +19,9 @@ async function WarehouseDataFetcher() {
     products = await getAllProducts()
  
 
-  return <WherehousePageClient MOCK_PRODUCTS={products} isAdmin={isAdmin} />
+  return (
+  <WherehousePageClient MOCK_PRODUCTS={products} isAdmin={isAdmin} />
+)
 }
 
 export default function TheOrganizerPage() {

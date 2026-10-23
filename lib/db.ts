@@ -2,9 +2,7 @@ import mongoose from 'mongoose'
 
 const MONGODB_URI = process.env.MONGODB_URI
 
-if (!MONGODB_URI) {
-  throw new Error('Variabile db env non trovata / No environment db variable found')
-}
+
 
 interface MongooseCache {
   conn: typeof mongoose | null
@@ -17,11 +15,12 @@ declare global {
 
 let cached = global.mongooseCache
 
-if (!cached) {
-  cached = global.mongooseCache = { conn: null, promise: null }
-}
+
 
 export async function connectDB() {
+  if (!MONGODB_URI) {
+  throw new Error('Variabile db env non trovata / No environment db variable found')
+}
 if (!cached) {
     cached = global.mongooseCache = { conn: null, promise: null }
   }

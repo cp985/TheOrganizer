@@ -1,0 +1,24 @@
+services:
+  app:
+    image: prova-next-organizer:v1
+    container_name: next-app
+    ports:
+      - "3000:3000"
+    environment:
+      - MONGODB_URI=mongodb://mongo:27017/the-organizer-db  
+      - AUTH_TRUST_HOST=true
+      - AUTH_SECRET=c833cb0d39f41104416938efe58d55df56e0301cf82a2e741babb19c8f8e585f
+      - AUTH_URL=http://localhost:3000
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+volumes:
+  mongo_data:
