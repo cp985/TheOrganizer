@@ -93,6 +93,9 @@ Ideale per dimostrare competenze di orchestrazione con Kubernetes, persistenza d
 
 Sviluppato come progetto portfolio per dimostrare competenze avanzate nello sviluppo Fullstack e nell'ingegneria DevOps moderna.
 
+Nota:
+Se si userà admin come username si accederà alla vista administrator con funzionalità aggiuntive.
+
 --------------
 
 
@@ -190,3 +193,6 @@ Ideal for showcasing orchestration skills with Kubernetes, data persistence (PVC
 👨‍💻 Author
 
 Developed as a portfolio project to demonstrate advanced full-stack development skills and modern DevOps engineering.
+
+Notes:
+If you will use admin as username , you will be able to access  new features.
